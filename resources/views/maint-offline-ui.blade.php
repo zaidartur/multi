@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Nextro Able Bootstrap 4 Admin Template</title>
+    <title>Site Down</title>
     <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 11]>
@@ -20,26 +20,26 @@
     <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
 
     <!-- font css -->
-    <link rel="stylesheet" href="assets/fonts/font-awsome-pro/css/pro.min.css">
-    <link rel="stylesheet" href="assets/fonts/feather.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+    <link rel="stylesheet" href="{{ asset('assets/') }}/fonts/font-awsome-pro/css/pro.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/') }}/fonts/feather.css">
+    <link rel="stylesheet" href="{{ asset('assets/') }}/fonts/fontawesome.css">
 
     <!-- vendor css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/customizer.css">
+    <link rel="stylesheet" href="{{ asset('assets/') }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/') }}/css/customizer.css">
 
 </head>
 <!-- [ offline-ui ] start -->
 <div class="auth-wrapper offline">
     <div class="offline-wrapper">
-        <img src="assets/images/maintance/sparcle-1.png" alt="User-Image" class="img-fluid s-img-1">
-        <img src="assets/images/maintance/sparcle-2.png" alt="User-Image" class="img-fluid s-img-2">
+        <img src="{{ asset('assets/') }}/images/def/sparcle-1.png" alt="User-Image" class="img-fluid s-img-1">
+        <img src="{{ asset('assets/') }}/images/def/sparcle-2.png" alt="User-Image" class="img-fluid s-img-2">
         <div class="container off-main">
             <div class="row justify-content-center">
                 <div class="col-6">
                     <div class="text-center">
                         <div class="moon"></div>
-                        <img src="assets/images/maintance/ship.svg" alt="" class="img-fluid boat-img">
+                        <img src="{{ asset('assets/') }}/images/def/ship.svg" alt="" class="img-fluid boat-img">
                     </div>
                 </div>
             </div>
@@ -48,11 +48,11 @@
                     <div class="text-center">
                         <h1 class="text-white text-uppercase">Offline</h1>
                         <h5 class="text-white font-weight-normal m-b-30">The site is temporarily down</h5>
-                        <button class="btn btn-primary mb-4"><i class="feather icon-refresh-ccw mr-2"></i>Reload</button>
+                        {{-- <button class="btn btn-primary mb-4"><i class="feather icon-refresh-ccw mr-2"></i>Reload</button> --}}
                     </div>
                 </div>
                 <div class="sark">
-                    <img src="assets/images/maintance/sark.svg" alt="" class="img-fluid img-sark">
+                    <img src="{{ asset('assets/') }}/images/def/sark.svg" alt="" class="img-fluid img-sark">
                     <div class="bubble"></div>
                 </div>
             </div>
@@ -71,10 +71,10 @@
 </div>
 <!-- [ offline-ui ] end -->
 <!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
-<script src="assets/js/plugins/bootstrap.min.js"></script>
-<script src="assets/js/pages/TweenMax.min.js"></script>
-<script src="assets/js/pages/jquery.wavify.js"></script>
+<script src="{{ asset('assets/') }}/js/vendor-all.min.js"></script>
+<script src="{{ asset('assets/') }}/js/plugins/bootstrap.min.js"></script>
+<script src="{{ asset('assets/') }}/js/pages/TweenMax.min.js"></script>
+<script src="{{ asset('assets/') }}/js/pages/jquery.wavify.js"></script>
 <div class="pct-customizer">
     <div href="#!" class="pct-c-btn">
         <button class="btn btn-light-danger" id="pct-toggler">

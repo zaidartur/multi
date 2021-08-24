@@ -29,9 +29,14 @@
         .logo-src{
             height:23px;
             width:97px;
-            background:url({{ asset("assets/") }}/images/logo-inverse.png);
+            background:url({{ asset("assets/") }}/images/logo.png);
         }
-        .app-header__logo .logo-src {
+        .app-header.header-text-light .app-header__logo .logo-src {
+            height: 23px;
+            width: 97px;
+            background: url({{ asset("assets/") }}/images/logo.png);
+        }
+        .app-header.header-text-dark .app-header__logo .logo-src {
             height: 23px;
             width: 97px;
             background: url({{ asset("assets/") }}/images/logo-inverse.png);
@@ -40,7 +45,7 @@
 </head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <div class="app-header header-shadow">
+        <div class="app-header header-shadow bg-midnight-bloom header-text-light">
             <div class="app-header__logo">
                 <div class="logo-src"></div>
                 <div class="header__pane ml-auto">
@@ -75,7 +80,7 @@
                 <div class="app-header-left" style="width: 700px">
                     {{-- <h3 style="text-transform: uppercase">Ultimate App.</h3> --}}
                     <div class="ticker-container">
-                        <ul>
+                        <ul style="color: white">
                             <div>
                                 <li><span> Selamat Datang &nbsp;&nbsp;&nbsp;</span></li>
                             </div>
@@ -101,10 +106,10 @@
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-                                            <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                            <button type="button" tabindex="0" class="dropdown-item">Actions</button>
                                             <div tabindex="-1" class="dropdown-divider"></div>
-                                            <button type="button" tabindex="0" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</button>
+                                            <button type="button" tabindex="0" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                <i class="fa fa-power-off"></i> &nbsp;Logout
+                                            </button>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                 @csrf
                                             </form>
@@ -113,10 +118,10 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        Alina Mclourd
+                                        {{ Auth::user()->name; }}
                                     </div>
                                     <div class="widget-subheading">
-                                        VP People Manager
+                                        {{ Auth::user()->email; }}
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
@@ -132,7 +137,7 @@
         </div>
 
         <div class="app-main">
-                <div class="app-sidebar sidebar-shadow">
+                <div class="app-sidebar sidebar-shadow bg-heavy-rain sidebar-text-dark">
                     <div class="app-header__logo">
                         <div class="logo-src"></div>
                         <div class="header__pane ml-auto">
@@ -180,27 +185,8 @@
                     <div class="app-wrapper-footer">
                         <div class="app-footer">
                             <div class="app-footer__inner">
-                                <div class="app-footer-left">
-                                    <ul class="nav">
-                                        <li class="nav-item">
-                                            <a href="javascript:void(0);" class="nav-link">
-                                                Footer Link 1
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="javascript:void(0);" class="nav-link">
-                                                Footer Link 2
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="app-footer-right">
                                     <ul class="nav">
-                                        <li class="nav-item">
-                                            <a href="javascript:void(0);" class="nav-link">
-                                                Footer Link 3
-                                            </a>
-                                        </li>
                                         <li class="nav-item">
                                             <a href="javascript:void(0);" class="nav-link">
                                                 <div class="badge badge-success mr-1 ml-0">

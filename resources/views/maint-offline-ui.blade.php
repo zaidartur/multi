@@ -17,7 +17,7 @@
     <meta name="author" content="Phoenixcoded" />
 
     <!-- Favicon icon -->
-    <link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/') }}/images/def/favicon.svg" type="image/x-icon">
 
     <!-- font css -->
     <link rel="stylesheet" href="{{ asset('assets/') }}/fonts/font-awsome-pro/css/pro.min.css">

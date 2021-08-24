@@ -19,7 +19,7 @@
 	<meta name="author" content="Phoenixcoded" />
 
 	<!-- Favicon icon -->
-	<link rel="icon" href="{{ asset('assets/') }}/images/favicon.svg" type="image/x-icon">
+	<link rel="icon" href="{{ asset('assets/') }}/images/def/favicon.svg" type="image/x-icon">
 
 	<!-- font css -->
 	<link rel="stylesheet" href="{{ asset('assets/') }}/fonts/font-awsome-pro/css/pro.min.css">
@@ -41,7 +41,7 @@
 				<div class="col-md-6 img-card-side">
 					<img src="{{ asset('assets/') }}/images/def/auth-side1.jpg" alt="" class="img-fluid">
 					<div class="img-card-side-content">
-						<img src="{{ asset('assets/') }}/images/logo-dark.svg" alt="" class="img-fluid">
+						<img src="{{ asset('assets/') }}/images/def/icon.png" alt="" class="img-fluid">
 					</div>
 				</div>
 				<div class="col-md-6">

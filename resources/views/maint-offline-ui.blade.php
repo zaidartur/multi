@@ -48,7 +48,10 @@
                     <div class="text-center">
                         <h1 class="text-white text-uppercase">Offline</h1>
                         <h5 class="text-white font-weight-normal m-b-30">The site is temporarily down</h5>
-                        {{-- <button class="btn btn-primary mb-4"><i class="feather icon-refresh-ccw mr-2"></i>Reload</button> --}}
+                        <button class="btn btn-primary mb-4" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="feather icon-refresh-ccw mr-2"></i>Logout</button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </div>
                 </div>
                 <div class="sark">

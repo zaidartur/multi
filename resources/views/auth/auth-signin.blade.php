@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Nextro Able Bootstrap 4 Admin Template</title>
+	<title>Login</title>
 	<!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 11]>
@@ -19,16 +19,16 @@
 	<meta name="author" content="Phoenixcoded" />
 
 	<!-- Favicon icon -->
-	<link rel="icon" href="assets/images/favicon.svg" type="image/x-icon">
+	<link rel="icon" href="{{ asset('assets/') }}/images/favicon.svg" type="image/x-icon">
 
 	<!-- font css -->
-	<link rel="stylesheet" href="assets/fonts/font-awsome-pro/css/pro.min.css">
-	<link rel="stylesheet" href="assets/fonts/feather.css">
-	<link rel="stylesheet" href="assets/fonts/fontawesome.css">
+	<link rel="stylesheet" href="{{ asset('assets/') }}/fonts/font-awsome-pro/css/pro.min.css">
+	<link rel="stylesheet" href="{{ asset('assets/') }}/fonts/feather.css">
+	<link rel="stylesheet" href="{{ asset('assets/') }}/fonts/fontawesome.css">
 
 	<!-- vendor css -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="stylesheet" href="assets/css/customizer.css">
+	<link rel="stylesheet" href="{{ asset('assets/') }}/css/style.css">
+	<link rel="stylesheet" href="{{ asset('assets/') }}/css/customizer.css">
 
 
 </head>
@@ -39,44 +39,58 @@
 		<div class="card">
 			<div class="row align-items-stretch text-center">
 				<div class="col-md-6 img-card-side">
-					<img src="assets/images/auth/auth-side1.jpg" alt="" class="img-fluid">
+					<img src="{{ asset('assets/') }}/images/def/auth-side1.jpg" alt="" class="img-fluid">
 					<div class="img-card-side-content">
-						<img src="assets/images/logo-dark.svg" alt="" class="img-fluid">
+						<img src="{{ asset('assets/') }}/images/logo-dark.svg" alt="" class="img-fluid">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="card-body">
+                        <form method="POST" action="{{ route('login') }}">
+                        @csrf
 						<div class="text-left">
-							<h4 class="mb-3 f-w-600">Welcome to <span class="text-primary">Nextro</span></h4>
-							<p class="text-muted mb-4">Welcome back, Please login <br>into a account</p>
+							<h4 class="mb-3 f-w-600">Selamat datang di <span class="text-primary">Ultimate</span></h4>
+							<p class="text-muted mb-4">Selamat datang kembali, silahkan login terlebih dahulu.</p>
 						</div>
 						<div class="">
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="mail"></i></span>
 								</div>
-								<input type="email" class="form-control" placeholder="Email address">
+								<input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Alamat email">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							</div>
 							<div class="input-group mb-4">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i data-feather="lock"></i></span>
 								</div>
-								<input type="password" class="form-control" placeholder="Password">
+								<input type="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}" placeholder="Password">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							</div>
 							<div class="form-group text-left my-2">
-								<div class="float-right">
+                                <br><br>
+								{{-- <div class="float-right">
 									<a href="#!" class="text-primary"><span>Forgot Password?</span></a>
 								</div>
 								<div class="custom-control custom-checkbox d-inline-block">
 									<input type="checkbox" class="custom-control-input input-primary" id="customCheckdefh2" checked="">
 									<label class="custom-control-label" for="customCheckdefh2">Remember me</label>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 						<div class="text-right">
-							<button class="btn btn-light-primary mt-2">Cancel</button>
-							<button class="btn btn-primary mt-2">Sign up</button>
+							<button type="button" class="btn btn-light-primary mt-2" onclick="location.href='{{ route('register') }}'">Register</button>
+							<button type="submit" class="btn btn-primary mt-2">Login</button>
 						</div>
+                        </form>
 					</div>
 				</div>
 			</div>
@@ -86,10 +100,10 @@
 <!-- [ auth-signup ] end -->
 
 <!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
-<script src="assets/js/plugins/bootstrap.min.js"></script>
-<script src="assets/js/plugins/feather.min.js"></script>
-<script src="assets/js/pcoded.min.js"></script>
+<script src="{{ asset('assets/') }}/js/vendor-all.min.js"></script>
+<script src="{{ asset('assets/') }}/js/plugins/bootstrap.min.js"></script>
+<script src="{{ asset('assets/') }}/js/plugins/feather.min.js"></script>
+<script src="{{ asset('assets/') }}/js/pcoded.min.js"></script>
 <div class="pct-customizer">
     <div href="#!" class="pct-c-btn">
         <button class="btn btn-light-danger" id="pct-toggler">

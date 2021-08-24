@@ -19,6 +19,9 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/') }}/images/favicon.svg" />
+
     <link href="{{ asset('assets/') }}/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>

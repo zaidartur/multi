@@ -78,7 +78,7 @@ class RegisterController extends Controller
     {
         $uuid = Uuid::uuid4()->toString();
 
-        DB::table('user_detail')->insert(['detail_uuid' => $uuid]);
+        DB::table('user_detail')->insert(['detail_uuid' => $uuid, 'detail_photo' => 'user.png']);
         return User::create([
             'uuid' => $uuid,
             'name' => $data['name'],

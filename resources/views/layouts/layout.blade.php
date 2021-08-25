@@ -100,7 +100,7 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <img width="42" class="rounded-circle" src="{{ asset('assets/').'/images/users/'.$detail->detail_photo }}" alt="">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -118,16 +118,14 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        {{ Auth::user()->name; }}
+                                        {{ explode(' ', Auth::user()->name)[0]; }}
                                     </div>
                                     <div class="widget-subheading">
                                         {{ Auth::user()->email; }}
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
-                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                    </button>
+                                    &nbsp;
                                 </div>
                             </div>
                         </div>
@@ -188,19 +186,14 @@
                                 <div class="app-footer-right">
                                     <ul class="nav">
                                         <li class="nav-item">
-                                            <a href="javascript:void(0);" class="nav-link">
-                                                <div class="badge badge-success mr-1 ml-0">
-                                                    <small>NEW</small>
-                                                </div>
-                                                Footer Link 4
-                                            </a>
+                                            Footer
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>    </div>
-                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                    </div>
+                </div>
         </div>
     </div>
     <script type="text/javascript" src="{{ asset('assets/') }}/js/main.js"></script>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data = '';
-        return view('main.main', ['data' => $data]);
+        $data = DB::table('user_detail')->where('detail_uuid', Auth::user()->uuid)->first();
+        return view('main.data.datakontak', ['detail' => $data]);
     }
 }

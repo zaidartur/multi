@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -75,11 +76,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $uuid = Uuid::uuid4()->toString();
+
+        DB::table('user_detail')->insert(['detail_uuid' => $uuid]);
         return User::create([
-            'uuid' => Uuid::uuid4()->toString(),
+            'uuid' => $uuid,
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'level' => 0,
         ]);
     }
 }

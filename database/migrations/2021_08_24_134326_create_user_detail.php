@@ -15,9 +15,11 @@ class CreateUserDetail extends Migration
     {
         Schema::create('user_detail', function (Blueprint $table) {
             $table->char('detail_uuid', '36')->primary();
+            $table->string('detail_sapaan', '30')->nullable();
             $table->string('detail_alamat')->nullable();
-            $table->integer('detail_phone', 13)->nullable();
-            $table->timestamps();
+            $table->integer('detail_phone')->nullable();
+            $table->string('detail_ket')->nullable();
+            $table->string('detail_posisi', '30')->nullable();
         });
     }
 

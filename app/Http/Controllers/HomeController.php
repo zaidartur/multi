@@ -27,6 +27,6 @@ class HomeController extends Controller
     public function index()
     {
         $data = DB::table('user_detail')->where('detail_uuid', Auth::user()->uuid)->first();
-        return view('main.data.datakontak', ['detail' => $data]);
+        return view('main.main', ['detail' => $data]);
     }
 }

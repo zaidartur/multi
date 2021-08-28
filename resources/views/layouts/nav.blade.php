@@ -2,7 +2,7 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">Dashboards</li>
                                 <li>
-                                    <a href="index.html" class="mm-active">
+                                    <a href="{{ route('home') }}" class="mm-active">
                                         <i class="metismenu-icon pe-7s-home"></i>
                                         Dashboard
                                     </a>
@@ -63,7 +63,7 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="elements-buttons-standard.html">
+                                            <a href="{{ route('datakontak') }}">
                                                 <i class="metismenu-icon"></i>
                                                 Data Semua Kontak
                                             </a>

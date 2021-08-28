@@ -33,7 +33,48 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="tab-content">
-
+                                            <div class="col-sm-12 col-lg-12">
+                                                <button class="btn btn-success" onclick="location.href='{{ route('expkontak') }}'">Export</button>
+                                                <button class="btn btn-warning">Import</button>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-12 col-lg-12 table-responsive">
+                                                <table class="table table-striped table-bordered table-responsive" style="width: 100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Sapaan</th>
+                                                            <th>Nama</th>
+                                                            <th>No HP</th>
+                                                            <th>Email</th>
+                                                            <th>Tgl Lahir</th>
+                                                            <th>Agama</th>
+                                                            <th>Jenis Kelamin</th>
+                                                            <th>Alamat</th>
+                                                            <th>Pekerjaaan</th>
+                                                            <th>Keterangan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <?php $no=1; ?>
+                                                    <tbody>
+                                                        @foreach ($contact as $item)
+                                                            <tr>
+                                                                <td>{{ $no++ }}</td>
+                                                                <td>{{ $item->contact_sapaan }}</td>
+                                                                <td>{{ $item->contact_name }}</td>
+                                                                <td>{{ $item->contact_phone }}</td>
+                                                                <td>{{ $item->contact_email }}</td>
+                                                                <td>{{ $item->contact_birthday }}</td>
+                                                                <td>{{ $item->contact_agama }}</td>
+                                                                <td>{{ $item->contact_gender }}</td>
+                                                                <td>{{ $item->contact_address }}</td>
+                                                                <td>{{ $item->contact_pekerjaan }}</td>
+                                                                <td>{{ $item->contact_keterangan }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

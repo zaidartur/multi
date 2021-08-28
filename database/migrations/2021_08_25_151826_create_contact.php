@@ -22,11 +22,12 @@ class CreateContact extends Migration
             $table->date('contact_birthday');
             $table->string('contact_agama', '25');
             $table->string('contact_address')->nullable();
-            $table->string('contact_kecamatan', '50');
-            $table->string('contact_kabupaten', '50');
-            $table->string('contact_provinsi', '50');
+            $table->string('contact_kecamatan', '50')->nullable();
+            $table->string('contact_kabupaten', '50')->nullable();
+            $table->string('contact_provinsi', '50')->nullable();
             $table->string('contact_pekerjaan', '30');
             $table->string('contact_status', '20')->nullable();
+            $table->string('contact_keterangan')->nullable();
             $table->bigInteger('contact_urut');
             $table->timestamp('contact_created');
         });

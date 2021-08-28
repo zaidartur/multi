@@ -41,9 +41,13 @@
             width: 97px;
             background: url({{ asset("assets/") }}/images/logo-inverse.png);
         }
+        .app-main__inner {
+            background-size: cover;
+            background-image: url({{ asset("assets/") }}/images/white-brick.jpg);
+        }
     </style>
 </head>
-<body>
+<body class="brick">
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow bg-midnight-bloom header-text-light">
             <div class="app-header__logo">

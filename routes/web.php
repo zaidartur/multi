@@ -19,3 +19,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'viewAll'])->name('datakontak');
+Route::get('/export', [App\Http\Controllers\ContactController::class, 'export'])->name('expkontak');
